@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/product_provider.dart';
+import '../models/product_provider.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   static final nameRoute = '/Product_Detail';
@@ -16,6 +16,12 @@ class ProductDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(loadedProvider.name),
+      ),
+      body: Column(
+        children: [
+          Image.network(loadedProvider.imageUrl),
+          Text(loadedProvider.description),
+        ],
       ),
     );
   }
